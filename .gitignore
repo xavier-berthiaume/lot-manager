@@ -86,3 +86,9 @@ Thumbs.db
 # Logs and temp files
 *.log
 *.tmp
+
+# Compiled documentation
+*/docs/html
+*/docs/latex
+docs/html
+docs/latex
