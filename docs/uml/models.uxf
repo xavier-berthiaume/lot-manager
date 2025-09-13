@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.0.0">
-  <zoom_level>8</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>360</y>
-      <w>232</w>
-      <h>120</h>
+      <x>378</x>
+      <y>385</y>
+      <w>203</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>/AbstractStorable/
+    <panel_attributes>bg=blue
+/AbstractStorable/
 --
 - id : uuid
-- created_by : datetime
+- created_by : uuid
 - creation_date : datetime
 - update_date : datetime</panel_attributes>
     <additional_attributes/>
@@ -20,12 +21,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>536</x>
-      <y>752</y>
-      <w>232</w>
-      <h>80</h>
+      <x>539</x>
+      <y>728</y>
+      <w>203</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
+    <panel_attributes>bg=yellow
+&lt;&lt;interface&gt;&gt;
 /Vehicle/
 --
 + getDisplayDetails() : string
@@ -35,204 +37,127 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1152</x>
-      <y>880</y>
-      <w>232</w>
-      <h>56</h>
+      <x>882</x>
+      <y>483</y>
+      <w>217</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>Reefer
+    <panel_attributes>bg=gray
+TemperatureControlledVehicle
 --
-- targetTemperature : int</panel_attributes>
+- targetTemperature : int
+- vehicle : Vehicle
+--
++ accept(DatabaseVisitor) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>536</x>
-      <y>528</y>
-      <w>232</w>
-      <h>80</h>
+      <x>224</x>
+      <y>532</y>
+      <w>203</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>User
+    <panel_attributes>bg=gray
+User
 --
 - userNumber : int
 - userName : string
-- passwordHash : string</panel_attributes>
+- passwordHash : string
+--
++ accept(DatabaseVisitor) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>536</x>
-      <y>640</y>
-      <w>232</w>
-      <h>80</h>
+      <x>224</x>
+      <y>819</y>
+      <w>203</w>
+      <h>84</h>
     </coordinates>
-    <panel_attributes>LotSpace
+    <panel_attributes>bg=gray
+LotSpace
 --
 - xPosition : int
 - yPosition : int
-- positionCode : string</panel_attributes>
+- positionCode : string
+- currentVehicleId : uuid
+--
++ accept(DatabaseVisitor) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1152</x>
-      <y>752</y>
-      <w>232</w>
-      <h>80</h>
+      <x>1225</x>
+      <y>728</y>
+      <w>203</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>SemiTrailer
+    <panel_attributes>bg=gray
+SemiTrailer
 --
 - trailerNumber : string
 --
-+ getDisplayDetails() : string
-+ getIdentifier() : string</panel_attributes>
++ accept(DatabaseVisitor) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1256</x>
-      <y>824</y>
-      <w>24</w>
-      <h>72</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1072</x>
-      <y>784</y>
-      <w>96</w>
-      <h>24</h>
+      <x>1092</x>
+      <y>756</y>
+      <w>147</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>224</x>
-      <y>752</y>
-      <w>232</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>QVehicle
---
-- vehicle : Vehicle
---
-+ accept(DatabaseVisitor *) : void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>224</x>
-      <y>528</y>
-      <w>232</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>QUser
---
-- user : User
---
-+ accept(DatabaseVisitor *) : void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>224</x>
-      <y>640</y>
-      <w>232</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>QLotSpace
---
-- lotSpace : LotSpace
---
-+ accept(DatabaseVisitor *) : void</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>152</x>
-      <y>472</y>
-      <w>88</w>
-      <h>112</h>
+      <x>420</x>
+      <y>483</y>
+      <w>77</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0;90.0;120.0</additional_attributes>
+    <additional_attributes>90.0;10.0;90.0;120.0;10.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>152</x>
-      <y>472</y>
-      <w>88</w>
-      <h>224</h>
+      <x>420</x>
+      <y>483</y>
+      <w>77</w>
+      <h>392</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;260.0;90.0;260.0</additional_attributes>
+    <additional_attributes>90.0;10.0;90.0;540.0;10.0;540.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>152</x>
-      <y>472</y>
-      <w>88</w>
-      <h>336</h>
+      <x>476</x>
+      <y>483</y>
+      <w>77</w>
+      <h>294</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;400.0;90.0;400.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>448</x>
-      <y>560</y>
-      <w>104</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>448</x>
-      <y>672</y>
-      <w>104</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>448</x>
-      <y>784</y>
-      <w>104</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>832</x>
-      <y>752</y>
-      <w>248</w>
-      <h>80</h>
+      <x>882</x>
+      <y>728</y>
+      <w>217</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>/AbstractVehicle/
+    <panel_attributes>bg=blue
+/AbstractVehicle/
 --
 # inventory : list&lt;InventoryItem&gt;
 # notes : string</panel_attributes>
@@ -241,37 +166,529 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>784</y>
-      <w>88</w>
-      <h>24</h>
+      <x>735</x>
+      <y>756</y>
+      <w>161</w>
+      <h>21</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>32</x>
-      <y>152</y>
-      <w>240</w>
-      <h>120</h>
+      <x>371</x>
+      <y>203</y>
+      <w>210</w>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
+    <panel_attributes>bg=yellow
+&lt;&lt;interface&gt;&gt;
 /Storable/
 --
-+ accept(DatabaseVisitor *) : void</panel_attributes>
++ accept(DatabaseVisitor) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>144</x>
-      <y>264</y>
-      <w>24</w>
+      <x>469</x>
+      <y>301</y>
+      <w>21</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>385</x>
+      <y>1197</y>
+      <w>224</w>
       <h>112</h>
     </coordinates>
+    <panel_attributes>bg=gray
+FactoryManager
+--
+- factories : QList&lt;ModelFactory&gt;
+--
+// This approach is a more elegant way than my previous way of passing 
+// enums describing different object types
++ createObject&lt;T&gt;(QVariantMap) : T
++ loadObject&lt;T&gt;(QVariantMap) : T
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>1120</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>QObject
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>1197</y>
+      <w>203</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+&lt;&lt;interface&gt;&gt;
+/ModelFactory/
+--
+/+ createObject(QVariantMap) : T/
+/+ loadObject(QVariantMap) : T/
+--
+&lt;&lt;signals&gt;&gt;
++ objectCreated(Storable) : void
++ objectLoaded(Storable) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>602</x>
+      <y>1246</y>
+      <w>105</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>1127</y>
+      <w>140</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>679</x>
+      <y>1127</y>
+      <w>126</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>1407</y>
+      <w>203</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+UserFactory
+--
++ createObject(QVariantMap) : QUser
++ loadObject(QVariantMap) : QUser</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>1302</y>
+      <w>21</w>
+      <h>119</h>
+    </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>938</x>
+      <y>1407</y>
+      <w>231</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+LotFactory
+--
++ createObject(QVariantMap) : QLotSpace
++ loadObject(QVariantMap) : QLotSpace</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>1302</y>
+      <w>280</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;380.0;90.0;380.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1211</x>
+      <y>1407</y>
+      <w>259</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+style=wordwrap
+VehicleFactory
+--
+- createCar(QVariantMap) : Car
+- createTruck(QVariantMap) : Truck
+- createSemiTrailer(QVariantMap) : SemiTrailer
+- createRefrigeratedVehicle(Vehicle) : TemperatureControlledVehicle
+
++ createObject(QVariantMap) : Vehicle
++ loadObject(QVariantMap) : Vehicle</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>1302</y>
+      <w>567</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;790.0;90.0;790.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1554</x>
+      <y>602</y>
+      <w>203</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+Truck
+--
+- axleCount : int
+- maxLoad : int
+// Assumed unit is in lbs
+--
++ accept(DatabaseVisitor) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1225</x>
+      <y>602</y>
+      <w>203</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+/PlatedVehicle/
+--
+- plateNumber : string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1421</x>
+      <y>630</y>
+      <w>147</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1554</x>
+      <y>483</y>
+      <w>203</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+Car
+--
+- doorCount : int
+--
++ accept(DatabaseVisitor) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1421</x>
+      <y>511</y>
+      <w>147</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;180.0;100.0;180.0;100.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>630</y>
+      <w>147</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;110.0;190.0;110.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>735</x>
+      <y>511</y>
+      <w>161</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;110.0;10.0;110.0;360.0;10.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>77</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>QObject
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>469</x>
+      <y>98</y>
+      <w>21</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>896</x>
+      <y>0</y>
+      <w>175</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+style=wordwrap
+fontsize=30
+Interface</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1113</x>
+      <y>0</y>
+      <w>175</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+style=wordwrap
+fontsize=30
+Abstract Class</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>686</x>
+      <y>0</y>
+      <w>175</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=green
+style=wordwrap
+fontsize=30
+Qt Framework</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1330</x>
+      <y>0</y>
+      <w>175</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+style=wordwrap
+fontsize=30
+Concrete Class</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>826</y>
+      <w>203</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+InventoryItem
+--
+- name : string
+- quantity : int
+--
++ accept(DatabaseVisitor) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>483</y>
+      <w>77</w>
+      <h>392</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;540.0;90.0;540.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>469</y>
+      <w>161</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+PermissionRoles
+--
+ CreateUsers
+ ModifyUsers
+ DeleteUsers
+ CreateLots
+ ModifyLots
+ DeleteLots
+ CreateVehicles
+ ModifyVehicles
+ MoveVehicles
+ DeleteVehicles
+ EditVehicleInventories
+ AddTemperatureReading
+ AuditTemperatures
+ AuditVehicleMoves</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>154</x>
+      <y>560</y>
+      <w>84</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>539</x>
+      <y>574</y>
+      <w>203</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+VehicleStatusRole
+--
+ Loading
+ Loaded
+ Unloading
+ Unloaded
+ Damaged
+ ToWash
+ Unknown</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>686</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>735</x>
+      <y>791</y>
+      <w>266</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;100.0;360.0;100.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>651</x>
+      <y>336</y>
+      <w>280</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Classes will prioritize using Qt framework native datatypes for consistency between interfaces, abstractions and implementations.
+fontsize=20
+style=wordwrap
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>224</x>
+      <y>973</y>
+      <w>203</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+AuditLogEntry
+--
+- userId : uuid
+- action : string
+- description : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>483</y>
+      <w>77</w>
+      <h>539</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;750.0;10.0;750.0</additional_attributes>
   </element>
 </diagram>

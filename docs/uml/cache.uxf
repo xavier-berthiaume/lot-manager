@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>130</y>
+      <w>520</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+MemoryCache
+--
+- QCache&lt;QString, QVariantMap&gt; m_objectCache
+- QCache&lt;QString, QList&lt;QVariantMap&gt; m_queryCache
+
+- QReadWriteLock m_objectLock
+- QReadWriteLock m_queryLock
+--
+- objectKey(ObjectType, QUuid) : QString
+- queryKey(ObjectType, int, int) : QString
+
++ hasObject(ObjectTypes, QUuid) : bool
++ getObject(ObjectTypes, QUuid) : QVariantMap
++ putObject(ObjectTypes, QVariantMap) : void
++ invalidateObject(ObjectTypes, QUuid) : void
+
++ hasQuery(ObjectTypes, int, int) : bool
++ getQuery(ObjectTypes, int, int) : QList&lt;QVariantMap&gt;
++ putObject(ObjectTypes, int, int, QList&lt;QVariantMap&gt;) : void
++ invalidateQueries(ObjectTypes) : void
+
++ invalidateAll() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>300</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>180</y>
+      <w>480</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+&lt;&lt;interface&gt;&gt;
+/AbstractCache/
+--
+/+ hasObject(ObjectTypes, QUuid) : bool/
+/+ getObject(ObjectTypes, QUuid) : QVariantMap/
+/+ putObject(ObjectTypes, QVariantMap) : void/
+/+ invalidateObject(ObjectTypes, QUuid) : void/
+
+/+ hasQuery(ObjectTypes, int, int) : bool/
+/+ getQuery(ObjectTypes, int, int) : QList&lt;QVariantMap&gt;/
+/+ putObject(ObjectTypes, int, int, QList&lt;QVariantMap&gt;) : void/
+/+ invalidateQueries(ObjectTypes) : void/
+
+/+ invalidateAll() : void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>70</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>50</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>bg=green
+QObject</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>550</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=green
+style=wordwrap
+fontsize=30
+Qt Framework</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>550</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+style=wordwrap
+fontsize=30
+Interface</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>550</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+style=wordwrap
+fontsize=30
+Abstract Class</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>940</x>
+      <y>550</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=gray
+style=wordwrap
+fontsize=30
+Concrete Class</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
